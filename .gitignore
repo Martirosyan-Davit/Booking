@@ -1,0 +1,49 @@
+## .NET build output
+bin/
+obj/
+out/
+publish/
+build/
+bld/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+
+## NuGet
+*.nupkg
+**/packages/*
+*.nuget.props
+*.nuget.targets
+
+## User-specific / IDE
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.rsuser
+*.DotSettings.user
+.vs/
+.vscode/
+.idea/
+*.swp
+*~
+
+## Test results
+TestResults/
+*.trx
+coverage*/
+
+## Logs
+*.log
+logs/
+
+## Environment / secrets
+.env
+appsettings.*.local.json
+
+## OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini

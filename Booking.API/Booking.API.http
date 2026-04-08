@@ -1,0 +1,121 @@
+@host = http://localhost:5062
+
+### --- Stylists ---
+
+### Get all stylists
+GET {{host}}/api/stylists
+Accept: application/json
+
+### Get stylist by ID
+GET {{host}}/api/stylists/1
+Accept: application/json
+
+### Create a stylist
+POST {{host}}/api/stylists
+Content-Type: application/json
+
+{
+  "name": "Lilit Harutyunyan",
+  "specialization": "Colorist",
+  "workStart": "09:00",
+  "workEnd": "18:00"
+}
+
+### Update a stylist
+PUT {{host}}/api/stylists/1
+Content-Type: application/json
+
+{
+  "name": "Lilit Harutyunyan",
+  "specialization": "Senior Colorist",
+  "workStart": "10:00",
+  "workEnd": "19:00"
+}
+
+### Delete a stylist
+DELETE {{host}}/api/stylists/1
+
+### --- Services ---
+
+### Get all services
+GET {{host}}/api/services
+Accept: application/json
+
+### Get service by ID
+GET {{host}}/api/services/1
+Accept: application/json
+
+### Create a service
+POST {{host}}/api/services
+Content-Type: application/json
+
+{
+  "name": "Balayage",
+  "durationMinutes": 90,
+  "price": 15000
+}
+
+### Update a service
+PUT {{host}}/api/services/1
+Content-Type: application/json
+
+{
+  "name": "Balayage Premium",
+  "durationMinutes": 120,
+  "price": 20000
+}
+
+### Delete a service
+DELETE {{host}}/api/services/1
+
+### --- Appointments ---
+
+### Get all appointments
+GET {{host}}/api/appointments
+Accept: application/json
+
+### Get appointments filtered by date
+GET {{host}}/api/appointments?date=2025-09-15
+Accept: application/json
+
+### Get appointments filtered by stylistId
+GET {{host}}/api/appointments?stylistId=1
+Accept: application/json
+
+### Get appointments filtered by status
+GET {{host}}/api/appointments?status=Pending
+Accept: application/json
+
+### Get appointment by ID
+GET {{host}}/api/appointments/1
+Accept: application/json
+
+### Create an appointment
+POST {{host}}/api/appointments
+Content-Type: application/json
+
+{
+  "clientName": "Anna Petrosyan",
+  "stylistId": 1,
+  "serviceId": 1,
+  "startsAt": "2025-09-15T10:00:00"
+}
+
+### Confirm an appointment
+PATCH {{host}}/api/appointments/1/status
+Content-Type: application/json
+
+{
+  "status": "Confirmed"
+}
+
+### Cancel an appointment
+PATCH {{host}}/api/appointments/1/status
+Content-Type: application/json
+
+{
+  "status": "Cancelled"
+}
+
+### Delete (soft-delete) an appointment
+DELETE {{host}}/api/appointments/1
