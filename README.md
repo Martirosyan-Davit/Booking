@@ -30,6 +30,11 @@ cp .env.example .env
 docker compose up --build
 ```
 
+> **Note:** If SQL Server does not start due to platform issues, specify the platform appropriate for your system. For example:
+> 
+> ```yaml
+> platform: linux/amd64
+> ```
 The API starts at **http://localhost:5062/swagger**.  
 Migrations apply automatically on startup — no manual steps needed.
 
